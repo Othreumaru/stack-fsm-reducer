@@ -1,0 +1,72 @@
+{
+  "name": "stack-fsm-reducer",
+  "version": "1.0.0",
+  "description": "Stack finite state machine reducer",
+  "main": "build/main/index.js",
+  "typings": "build/main/index.d.ts",
+  "module": "build/module/index.js",
+  "repository": "git@github.com:Odrinwhite/stack-fsm-reducer.git",
+  "keywords": [
+    "redux",
+    "reducer",
+    "state",
+    "functional",
+    "stack",
+    "finite",
+    "state",
+    "machine",
+    "fsm"
+  ],
+  "author": "Krzysztof Kabat <odrinwhite@gmail.com> (https://github.com/Odrinwhite)",
+  "license": "MIT",
+  "scripts": {
+    "build": "trash build && yarn build:main && yarn build:module",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "build:tests": "trash test && node config/exports/build-tests.js",
+    "lint": "tslint --project . --type-check src/**/*.ts",
+    "unit": "yarn build && nyc mocha --reporter spec build/main/**/*.spec.js",
+    "check-coverage": "nyc check-coverage",
+    "test": "yarn lint && yarn unit && yarn check-coverage",
+    "changelog": "standard-version",
+    "release": "yarn reset && yarn test && yarn changelog",
+    "reset": "git clean -dfx && git reset --hard && yarn"
+  },
+  "engines": {
+    "node": ">=4.5"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/minimatch": "^2.0.29",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.4",
+    "chai": "^4.1.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.4.2",
+    "rollup": "^0.44.0",
+    "rollup-plugin-alias": "^1.2.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.0.0",
+    "trash-cli": "^1.4.0",
+    "typescript": "^2.4.1",
+    "nyc": "^11.0.3",
+    "tslint": "^5.4.3",
+    "tslint-config-standard": "^6.0.1"
+  },
+  "dependencies": {
+    "minimatch": "^3.0.4",
+    "tslib": "^1.6.0"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js"
+    ],
+    "watermarks": {
+      "lines": [80, 95],
+      "functions": [80, 95],
+      "branches": [80, 95],
+      "statements": [80, 95]
+    }
+  }
+}
