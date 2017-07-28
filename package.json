@@ -1,6 +1,6 @@
 {
   "name": "stack-fsm-reducer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Stack finite state machine reducer",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -52,7 +52,8 @@
     "typescript": "^2.4.1",
     "nyc": "^11.0.3",
     "tslint": "^5.4.3",
-    "tslint-config-standard": "^6.0.1"
+    "tslint-config-standard": "^6.0.1",
+    "standard-version": "^4.0.0"
   },
   "dependencies": {
     "minimatch": "^3.0.4",
@@ -63,10 +64,22 @@
       "**/*.spec.js"
     ],
     "watermarks": {
-      "lines": [80, 95],
-      "functions": [80, 95],
-      "branches": [80, 95],
-      "statements": [80, 95]
+      "lines": [
+        80,
+        95
+      ],
+      "functions": [
+        80,
+        95
+      ],
+      "branches": [
+        80,
+        95
+      ],
+      "statements": [
+        80,
+        95
+      ]
     }
   }
 }
