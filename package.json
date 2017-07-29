@@ -1,6 +1,6 @@
 {
   "name": "stack-fsm-reducer",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Stack finite state machine reducer",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
