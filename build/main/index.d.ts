@@ -1,1 +1,1 @@
-export { createStackReducer, push, pop, head, match, path, splitHead, splitLastTwo } from './stack-reducer';
+export { createStackReducer, push, pop, head, match, path, splitHead, splitLastTwo, State, Stack, Action, ReducersMap, StackReducer } from './stack-reducer';
